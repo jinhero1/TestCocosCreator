@@ -1,0 +1,8 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.4.12",
+  "name": "TestTypeScript",
+  "id": "55d5c2ff-16df-4b8e-80f5-1e07dace6150",
+  "isNew": false
+}
