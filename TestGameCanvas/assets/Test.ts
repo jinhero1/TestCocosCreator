@@ -4,31 +4,21 @@ const { ccclass, property } = _decorator;
 @ccclass("Test")
 export class Test extends Component {
     start() {
-/*
-        console.log("Trace Test start");
-        var body = document.body;
+        const bug1 = this.writeReliabilityBug();
+        console.log("Trace bug1: ", bug1);
 
-        const result = 0.1 + 0.2;
-
-        console.log("Trace result: ", result);
-        console.log("Trace result toFixed: ", result.toFixed(2));
-        console.log("Trace result toPrecision: ", result.toPrecision(2));
-
-        const result2 = this.addAsIntegers(0.1, 0.2);
-        console.log("Trace result2: ", result2);
-*/
-        const bug = this.writeBug();
-        console.log("Trace bug: ", bug);
+        const bug2 = this.writeSecurityBug();
+        console.log("Trace bug2: ", bug2);
     }
-/*
-    private addAsIntegers(a: number, b: number): number {
-        return (a * 100 + b * 100) / 100;
-    }
-*/
+
     private collection = [];
-    private writeBug() {
+    private writeReliabilityBug() {
         if (this.collection.length < 0) {
             return null;
         }
+    }
+
+    private writeSecurityBug(): number {
+        return Math.random();
     }
 }
