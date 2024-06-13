@@ -1,9 +1,6 @@
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 
-const username = "admin";
-const password = "123456";
-
 @ccclass("Test")
 export class Test extends Component {
 
@@ -14,8 +11,8 @@ export class Test extends Component {
         const bug2 = this.writeSecurityHotspots();
         console.log("Trace bug2: ", bug2);
 
-        console.log("Trace username: ", username);
-        console.log("Trace password: ", password);
+        const bug3 = this.writeSecurityBug();
+        console.log("Trace bug3: ", bug3);
     }
 
     private collection = [];
@@ -23,6 +20,11 @@ export class Test extends Component {
         if (this.collection.length < 0) {
             return null;
         }
+    }
+
+    private writeSecurityBug() {
+        const password = '123456';
+        localStorage.setItem('password', password);
     }
 
     private writeSecurityHotspots(): number {
