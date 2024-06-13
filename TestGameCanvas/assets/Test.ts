@@ -23,8 +23,7 @@ export class Test extends Component {
     }
 
     private writeSecurityBug() {
-        const password = '123456';
-        localStorage.setItem('password', password);
+        fetch('http://www.google.com')
     }
 
     private writeSecurityHotspots(): number {
