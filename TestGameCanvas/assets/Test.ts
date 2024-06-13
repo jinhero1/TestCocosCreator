@@ -23,7 +23,13 @@ export class Test extends Component {
     }
 
     private writeSecurityBug() {
-        fetch('http://www.google.com')
+        const query = 'SELECT * FROM users WHERE id = 1';
+        fetch('https://localhost', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(query)
+        })
+
     }
 
     private writeSecurityHotspots(): number {
