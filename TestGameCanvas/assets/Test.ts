@@ -1,10 +1,11 @@
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 
+const username = "admin";
+const password = "123456";
+
 @ccclass("Test")
 export class Test extends Component {
-    const username = "admin";
-    const password = "123456";
 
     start() {
         const bug1 = this.writeReliabilityBug();
@@ -12,6 +13,9 @@ export class Test extends Component {
 
         const bug2 = this.writeSecurityHotspots();
         console.log("Trace bug2: ", bug2);
+
+        console.log("Trace username: ", username);
+        console.log("Trace password: ", password);
     }
 
     private collection = [];
